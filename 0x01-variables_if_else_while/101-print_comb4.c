@@ -14,15 +14,16 @@ int main(void)
 		{
 			for (k = j + 1; k <= '9'; k++)
 			{
+				if (i != '0' || j != '1' || k != '2')
+				{
+					putchar(',');
+					putchar(' ');
+				}
 				putchar(i);
 				putchar(j);
 				putchar(k);
-				putchar(',');
-				putchar(' ');
 			}
 		}
-		if (i == '9')
-			break;
 	}
 	putchar('\n');
 	return (0);

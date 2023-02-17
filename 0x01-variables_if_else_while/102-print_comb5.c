@@ -21,18 +21,19 @@ int main(void)
 						k++;
 						t = 0;
 					}
+					if (i != '0' || j != '0' || k != '0' || t != '1')
+					{
+						putchar(',');
+						putchar(' ');
+					}
 					putchar(i);
 					putchar(j);
 					putchar(' ');
 					putchar(k);
 					putchar(t);
-					putchar(',');
-					putchar(' ');
 				}
 			}
 		}
-		if (i == '9')
-			break;
 	}
 	putchar('\n');
 	return (0);
