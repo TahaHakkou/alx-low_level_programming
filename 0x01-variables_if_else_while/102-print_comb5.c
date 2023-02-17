@@ -14,15 +14,12 @@ int main(void)
 		{
 			for (k = i; k <= '9'; k++)
 			{
-				for (t = j + 1; t <= '9'; t++)
+				for (t = '0'; t <= '9'; t++)
 				{
-					if (j == '9')
-					{
-						k++;
-						t = 0;
-					}
-					if (k != i)
-						t = 0;
+					if (k == i && t == '0' && j != '9')
+						t = j + 1;
+					else if (k == i && t == '0' && j == '9')
+						break;
 					if (i != '0' || j != '0' || k != '0' || t != '1')
 					{
 						putchar(',');
