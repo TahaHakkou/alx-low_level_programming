@@ -21,6 +21,8 @@ int main(void)
 						k++;
 						t = 0;
 					}
+					if (k != i)
+						t = 0;
 					if (i != '0' || j != '0' || k != '0' || t != '1')
 					{
 						putchar(',');
