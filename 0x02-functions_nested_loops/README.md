@@ -7,3 +7,5 @@
 4-isalpha.c
 5-sign.c
 6-abs.c
+7-print_last_digit.c
+int print_last_digit(int);
