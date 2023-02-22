@@ -12,11 +12,13 @@ int main(void)
 	for (i = 2; i < 50; i++)
 	{
 		fib = num1 + num2;
-		printf("%d",fib);
+		printf("%d", fib);
 		if (i == 49)
 			break;
 		putchar(',');
 		putchar(' ');
+		num1 = num2;
+		num2 = fib;
 	}
 	putchar('\n');
 	return (0);
