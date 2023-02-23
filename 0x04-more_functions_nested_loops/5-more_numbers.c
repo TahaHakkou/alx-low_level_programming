@@ -15,11 +15,13 @@ void more_numbers(void)
 			_putchar(d + '0');
 			if (d == 9)
 			{
-				d = 0;
+				d = -1;
 				n -= 10;
 				t++;
 			}
 		}
+		n += (t * 10);
+		t = 0;
 		_putchar('\n');
 	}
 }

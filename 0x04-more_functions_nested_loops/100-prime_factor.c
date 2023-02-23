@@ -8,15 +8,15 @@ int main(void)
 {
 	unsigned int n = 612852475143, lpf = n, pf = 2;
 	int i, j;
-	
+
 	while (lpf != pf)
 	{
-		for(i = pf + 1;; i++)
+		for (i = pf + 1;; i++)
 		{
-			for(j = 2; j < i; j++)
-				if(i % j == 0)
+			for (j = 2; j < i; j++)
+				if (i % j == 0)
 					break;
-			if(j == i)
+			if (j == i)
 				break;
 		}
 		pf = i;
