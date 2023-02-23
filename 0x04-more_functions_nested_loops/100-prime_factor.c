@@ -6,7 +6,8 @@
  */
 int main(void)
 {
-	unsigned int n = 612852475143, lpf = n, pf = 2, i, j;
+	unsigned int n = 612852475/* 143 */, lpf = n, pf = 2;
+	unsigned int i, j;
 
 	while (lpf != pf)
 	{
