@@ -1,23 +1,18 @@
 #include <stdio.h>
 /**
- * main - prints first 50 fibonacci numbers
+ * main - prints sum of 'even' fibonacci numbersthat not exceed 4000000
  *
  * Return: Always 0
  */
 int main(void)
 {
-	int i;
-	unsigned int num1 = 1, num2 = 2, fib;
+	int num1 = 1, num2 = 2, fib = 2, sum = 0;
 
-	printf("1, 2, ");
-	for (i = 2; i < 50; i++)
+	while (fib <= 4000000)
 	{
+		if (fib % 2 == 0)
+			sum += fib;
 		fib = num1 + num2;
-		printf("%d", fib);
-		if (i == 49)
-			break;
-		putchar(',');
-		putchar(' ');
 		num1 = num2;
 		num2 = fib;
 	}

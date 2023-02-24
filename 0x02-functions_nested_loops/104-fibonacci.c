@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
- * main - prints first 50 fibonacci numbers
+ * main - prints first 98 fibonacci numbers
  *
  * Return: Always 0
  */
 int main(void)
 {
 	int i;
-	long long int num1 = 1, num2 = 2, fib;
+	size_t num1 = 1, num2 = 2, fib;
 
 	printf("1, 2, ");
-	for (i = 2; i < 50; i++)
+	for (i = 2; i < 98; i++)
 	{
 		fib = num1 + num2;
-		printf("%lld", fib);
-		if (i == 49)
+		printf("%zu", fib);
+		if (i == 97)
 			break;
 		putchar(',');
 		putchar(' ');
