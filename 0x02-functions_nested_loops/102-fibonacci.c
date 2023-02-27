@@ -7,13 +7,13 @@
 int main(void)
 {
 	int i;
-	long long int num1 = 1, num2 = 2, fib;
+	unsigned long int num1 = 1, num2 = 2, fib;
 
 	printf("1, 2, ");
 	for (i = 2; i < 50; i++)
 	{
 		fib = num1 + num2;
-		printf("%lld", fib);
+		printf("%lu", fib);
 		if (i == 49)
 			break;
 		putchar(',');

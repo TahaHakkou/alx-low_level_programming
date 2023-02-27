@@ -16,6 +16,6 @@ int main(void)
 		num1 = num2;
 		num2 = fib;
 	}
-	putchar('\n');
+	printf("%d\n", sum);
 	return (0);
 }
