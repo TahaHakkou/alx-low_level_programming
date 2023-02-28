@@ -7,19 +7,30 @@
 int main(void)
 {
 	int i;
-	size_t num1 = 1, num2 = 2, fib;
+	unsigned long int fa = 1, fb = 2, fa1, fa2, fb1, fb2, l;
 
-	printf("1, 2, ");
-	for (i = 2; i < 98; i++)
+	l = 1000000000;
+	printf("%lu", fa);
+	i = 2;
+	while (i <= 98 && fb < l)
 	{
-		fib = num1 + num2;
-		printf("%zu", fib);
-		if (i == 97)
-			break;
-		putchar(',');
-		putchar(' ');
-		num1 = num2;
-		num2 = fib;
+		fb += fa;
+		fa = fb - fa;
+		printf(", %lu", fb);
+		i++;
+	}
+	fa1 = fa / l;
+	fa2 = fa % l;
+	fb1 = fb / l;
+	fb2 = fb % l;
+	while (i <= 98)
+	{
+		printf(", %lu", fb1 + fb2 / l);
+		printf("%lu", fb2 % l);
+		fb1 += fa1;
+		fa1 = fb1 - fa1;
+		fb2 += fa2;
+		fa2 = fb2 - fa2;
 	}
 	putchar('\n');
 	return (0);
