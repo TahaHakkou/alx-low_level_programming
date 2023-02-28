@@ -31,6 +31,7 @@ int main(void)
 		fa1 = fb1 - fa1;
 		fb2 += fa2;
 		fa2 = fb2 - fa2;
+		i++;
 	}
 	putchar('\n');
 	return (0);
