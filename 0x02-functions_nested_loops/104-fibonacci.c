@@ -14,9 +14,9 @@ int main(void)
 	i = 2;
 	while (i <= 98 && fb < l)
 	{
+		printf(", %lu", fb);
 		fb += fa;
 		fa = fb - fa;
-		printf(", %lu", fb);
 		i++;
 	}
 	fa1 = fa / l;
