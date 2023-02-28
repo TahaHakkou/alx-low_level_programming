@@ -6,12 +6,18 @@
 void rev_string(char *s)
 {
 	int l, i;
+	char *p, tmp;
 
-	l = _strlen(s);
+	p = s;
+	while (p != '\0')
+		p++;
+	l = p - s;
 	i = 0;
 	while (i < (l / 2))
 	{
-		swap_int((s + i), (s + l - i - 1));
+		tmp = *(s + i);
+		*(s + i) = *(s + l - i - 1);
+		*(s + l - i - 1) = tmp;
 		i++;
 	}
 }
