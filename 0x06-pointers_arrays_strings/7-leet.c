@@ -12,9 +12,9 @@ char *leet(char *s)
 	int number[] = {4, 3, 0, 7, 1};
 
 	i = 0;
-	j = 0;
 	while (*(s + i) != '\0')
 	{
+		j++;
 		while (j < 5)
 		{
 			if (*(s + i) == letter[j])
