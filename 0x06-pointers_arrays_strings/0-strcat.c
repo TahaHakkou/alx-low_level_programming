@@ -2,7 +2,7 @@
 /**
  * _strcat - concatenates two strings
  * @dest: destination buffer
- * @src: source buffer
+ * @src: source buffe
  *
  * Return: a pointer to the resulting string dest
  */
