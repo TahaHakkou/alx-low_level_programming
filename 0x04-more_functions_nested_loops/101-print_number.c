@@ -5,23 +5,15 @@
  */
 void print_number(int n)
 {
-	int dec_pow = 10, is_negative = 0;
-
+	unsigned int m;
 	if (n < 0)
 	{
+		m = -n;
 		_putchar('-');
-		n = -(n + 1);
-		is_negative = 1;
 	}
-	while (n / dec_pow != 0)
-	{
-		dec_pow *= 10;
-	}
-	while (dec_pow != 1)
-	{
-		dec_pow /= 10;
-		if (dec_pow == 1 && is_negative)
-			n -= 9;
-		_putchar((n / dec_pow) % 10 + '0');
-	}
+	else
+		m = n;
+	if (m / 10)
+		print_number(m / 10);
+	_putchar((m % 10) + '0');
 }

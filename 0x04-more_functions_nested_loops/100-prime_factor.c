@@ -6,23 +6,25 @@
  */
 int main(void)
 {
-	unsigned long int n = 612852475143, lpf = n, pf = 2;
-	unsigned int i, j;
+	long int n, pf, i;
 
-	while (lpf != pf)
+	n = 612852475143;
+	pf = -1;
+	while (n % 2 == 0)
 	{
-		for (i = pf + 1;; i++)
-		{
-			for (j = 2; j < i; j++)
-				if (i % j == 0)
-					break;
-			if (j == i)
-				break;
-		}
-		pf = i;
-		while (lpf % pf == 0 && lpf != pf)
-			lpf = lpf / pf;
+		pf = 2;
+		n /= 2;
 	}
-	printf("%lu\n", lpf);
+	for (i = 3; i <= sqrt(n); i = i + 2)
+	{
+		while (n % i == 0)
+		{
+			pf = i;
+			n = n / i;
+		}
+	}
+	if (n > 2)
+	pf = n;
+	printf("%ld\n", pf);
 	return (0);
 }
