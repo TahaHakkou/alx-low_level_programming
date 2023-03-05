@@ -26,7 +26,7 @@ int main(void)
 	while (i <= 98)
 	{
 		printf(", %lu", fb1 + fb2 / l);
-		printf("%lu", fb2 % l);
+		printf("%09lu", fb2 % l);
 		fb1 += fa1;
 		fa1 = fb1 - fa1;
 		fb2 += fa2;
