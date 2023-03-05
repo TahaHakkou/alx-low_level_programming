@@ -5,23 +5,17 @@
  */
 void print_number(int n)
 {
-	int pow = 10, is_negative = 0;
+	unsigned int n1;
 
+	m = n;
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -(n + 1);
-		is_negative = 1;
+		m = -n;
 	}
-	while (n / pow != 0)
+	if (m / 10 != 0)
 	{
-		pow *= 10;
+		print_number(m / 10);
 	}
-	while (pow != 1)
-	{
-		pow /= 10;
-		if (pow == 1 && is_negative)
-			n -= 9;
-		_putchar((n / pow) % 10 + '0');
-	}
+	_putchar((m % 10) + '0');
 }
