@@ -23,7 +23,10 @@ char *_strpbrk(char *s, char *accept)
 		while (accept[j] != s[i] && accept[j] != '\0')
 			j++;
 		if (accept[j] == s[i])
+		{
 			found = 1;
+			break;
+		}
 		i++;
 	}
 	if (s[i] == '\0')

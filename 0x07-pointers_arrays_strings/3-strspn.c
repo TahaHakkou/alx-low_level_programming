@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 		j = 0;
 		while (accept[j] != s[i] && accept[j] != '\0')
 			j++;
-		if (s[i] == accept[j - 1])
+		if (s[i] == accept[j])
 			found = 1;
 		else
 			found = 0;
