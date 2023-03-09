@@ -27,15 +27,11 @@ int wildcmp(char *s1, char *s2)
 	else if (*s1 == '*')
 	{
 		if (*s2 == '*')
-			return();/* not complete */
-		while (s2[i] != s1[1])
-			i++;/* not complete */
+			return (wildcmp(s1, ++s2) || wildcmp(++s1, s2));
+		return (wildcmp(s1, ++s2));
 	}
 	else if (*s2 == '*')
-	{
-		while (s1[i] != s2[1])
-			i++;/*  not complete  */
-	}
+		return (wildcmp(++s1, s2));
 	else
 	{
 		if (*s1 == *s2)
