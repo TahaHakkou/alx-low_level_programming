@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 /**
  * main - adds positive numbers
  * @argc: arguments count
@@ -9,12 +11,16 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, i = 1, n;
+	int sum = 0, i = 1, j, n;
 
 	while (i < argc)
 	{
-		n = atoi(argv[i]);
-		if (n == 0 && *argv[i] != '0')
+		j = 0;
+		while (isdigit(argv[i][j]) && argv[i][j] != '\0')
+			j++;
+		if (j == strlen(argv[i]))
+			n = atoi(argv[i]);
+		else
 		{
 			printf("Error\n");
 			return (1);
