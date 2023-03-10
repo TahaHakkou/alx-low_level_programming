@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		j = 0;
-		while (isdigit(argv[i][j]) && argv[i][j] != '\0')
+		while (!isdigit(argv[i][j]) && argv[i][j] != '\0')
 			j++;
 		if (j == strlen(argv[i]))
 			n = atoi(argv[i]);
