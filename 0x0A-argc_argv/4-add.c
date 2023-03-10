@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		j = 0;
-		if (isdigit(argv[i]) || argv[i] == '-')
+		if (isdigit(*argv[i]) || *argv[i] == '-')
 			j++;
 		while (isdigit(argv[i][j]))
 			j++;
