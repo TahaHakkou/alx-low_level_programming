@@ -1,0 +1,1 @@
+cat main.h | grep -E '^[a-z]' --color=none | cut -d ';' -f1 | while read line; do echo -e "$line\n{\n\n}" > $($line | cut -d '_' -f2 | cut -d '(' -f1 ).c ; done
