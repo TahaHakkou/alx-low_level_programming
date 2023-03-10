@@ -11,12 +11,13 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, i = 1, j, n;
+	int sum = 0, i = 1, n;
+	long unsigned int j;
 
 	while (i < argc)
 	{
 		j = 0;
-		while (!isdigit(argv[i][j]) && argv[i][j] != '\0')
+		while (isdigit(argv[i][j]))
 			j++;
 		if (j == strlen(argv[i]))
 			n = atoi(argv[i]);
