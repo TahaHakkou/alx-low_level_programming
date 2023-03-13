@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
 #include "main.h"
 /**
- * create_array - creates an array of chars, and initializes it with a specific char
+ * create_array - creates an array of chars,
+ *		  and initializes it with a specific char
  * @size: size of the array
  * @c: character
  *
@@ -16,7 +18,6 @@ char *create_array(unsigned int size, char c)
 	a = malloc(size);
 	if (a == NULL || size == 0)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		a[i] = c;
+	memset(a, c, size);
 	return (a);
 }

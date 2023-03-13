@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int sum = 0, i = 1, n;
-	long unsigned int j;
+	unsigned long int j;
 
 	while (i < argc)
 	{
