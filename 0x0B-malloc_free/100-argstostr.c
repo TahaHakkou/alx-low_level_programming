@@ -19,7 +19,10 @@ char *argstostr(int ac, char **av)
 	if (ac != 0 && av != NULL)
 	{
 		while (i < ac)
+		{
 			l += strlen(av[i]);
+			i++;
+		}
 		s = malloc(l + ac + 1);
 		if (s != NULL)
 		{
@@ -28,6 +31,7 @@ char *argstostr(int ac, char **av)
 			{
 				memcpy(s, av[i], strlen(av[i]));
 				memcpy(s, "\n", 1);
+				i++;
 			}
 			memcpy(s, "", 1);
 		}
