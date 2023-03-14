@@ -8,7 +8,7 @@
 void free_grid(int **grid, int height)
 {
 	int i, j;
-	int width = (grid[1] - grid) / sizeof(int);
+	int width = (&grid[1] - grid) / sizeof(int);
 
 	for (i = 0; i < height; i++)
 	{

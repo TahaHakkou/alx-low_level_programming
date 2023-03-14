@@ -27,9 +27,9 @@ char *argstostr(int ac, char **av)
 			while (i < ac)
 			{
 				memcpy(s, av[i], strlen(av[i]));
-				memcpy(s, '\n', 1);
+				memcpy(s, "\n", 1);
 			}
-			memcpy(s, '\0', 1);
+			memcpy(s, "", 1);
 		}
 	}
 	return (s);
