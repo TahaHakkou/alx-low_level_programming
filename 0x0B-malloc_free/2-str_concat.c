@@ -10,13 +10,17 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s;
+	char *s = NULL;
 
-	s = malloc(strlen(s1) + strlrn(s2));
-	if (s == NULL)
-		return (s);
 	if (s1 == NULL)
-	memcpy(s, s1, strlen(s1));
-	memcpy(s[strlen(s1)], s2, strlen(s2));
+		*s1 = '\0';
+	if (s2 == NULL)
+		*s2 = '\0';
+	s = malloc(strlen(s1) + strlrn(s2) + 1);
+	if (s != NULL)
+	{
+		memcpy(s, s1, strlen(s1));
+		memcpy(s[strlen(s1)], s2, strlen(s2) + 1);
+	}
 	return (s);
 }

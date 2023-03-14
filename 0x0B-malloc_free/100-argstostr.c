@@ -1,3 +1,6 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
 #include "main.h"
 /**
  * argstostr - concatenates all the arguments of your program
@@ -10,13 +13,24 @@
  */
 char *argstostr(int ac, char **av)
 {
-	char *s;
+	char *s = NULL;
+	int l = 0, i = 0;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	while ()
+	if (ac != 0 && av != NULL)
 	{
-		memcpy(av, av[i], strlen(av[i]));
-		memcpy(av, '\n', 1);
+		while (i < ac)
+			l += strlen(av[i]);
+		s = malloc(l + ac + 1);
+		if (s != NULL)
+		{
+			i = 0;
+			while (i < ac)
+			{
+				memcpy(s, av[i], strlen(av[i]));
+				memcpy(s, '\n', 1);
+			}
+			memcpy(s, '\0', 1);
+		}
 	}
+	return (s);
 }
