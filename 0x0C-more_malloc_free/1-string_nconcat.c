@@ -26,7 +26,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		memcpy(s, s1, strlen(s1));
 		memcpy(s + strlen(s1), s2, n);
-		memcpy(s + strlen(s1) + n, '\0', 1);
+		memcpy(s + strlen(s1) + n, "", 1);
 	}
 	return (s);
 }
