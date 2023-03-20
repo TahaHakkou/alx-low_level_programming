@@ -1,3 +1,4 @@
-#ifndef ABS
+#ifndef FL_MACRO_H
+#define FL_MACRO_H
 #define ABS(x) ((x) >= 0 ? (x) : (-x))
-#endif /* ABS(x) */
+#endif /* FL_MACRO_H */
