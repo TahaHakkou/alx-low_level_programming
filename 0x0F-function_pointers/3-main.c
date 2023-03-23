@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * main - 
- * @argc: 
- * @argv: 
+ * main - performs simple operations
+ * @argc: arguments count
+ * @argv: arguments vector
  *
- * Return: 
+ * Return: Always 0
  */
 int main(int argc, char **argv)
 {

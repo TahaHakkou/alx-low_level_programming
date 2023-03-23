@@ -47,8 +47,9 @@ int op_div(int a, int b)
 {
 	return (a / b);
 }
+
 /**
- * op_add - divides 2 numbers
+ * op_mod - divides 2 numbers
  * @a: first number
  * @b: second number
  *
