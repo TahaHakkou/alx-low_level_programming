@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	else if ()
+	else if (1)
 	{
 		printf("Error\n");
 		exit(99);

@@ -8,7 +8,9 @@
  * Return: the sum of a & b
  */
 int op_add(int a, int b)
+{
 	return (a + b);
+}
 
 /**
  * op_sub - substracts 2 numbers
@@ -18,7 +20,9 @@ int op_add(int a, int b)
  * Return: the difference of a & b
  */
 int op_sub(int a, int b)
+{
 	return (a - b);
+}
 
 /**
  * op_mul - multiplies 2 numbers
@@ -28,7 +32,9 @@ int op_sub(int a, int b)
  * Return: the product of a & b
  */
 int op_mul(int a, int b)
+{
 	return (a * b);
+}
 
 /**
  * op_div - divides 2 numbers
@@ -38,8 +44,9 @@ int op_mul(int a, int b)
  * Return: the result of division of a by b
  */
 int op_div(int a, int b)
+{
 	return (a / b);
-
+}
 /**
  * op_add - divides 2 numbers
  * @a: first number
@@ -48,4 +55,6 @@ int op_div(int a, int b)
  * Return: the remainder of division of a by b
  */
 int op_mod(int a, int b)
+{
 	return (a % b);
+}
