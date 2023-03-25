@@ -10,6 +10,8 @@
  */
 int main(int argc, char **argv)
 {
+	int (*f)(int a, int b) = get_op_func(argv[2]);
+
 	if (argc != 4)
 	{
 		printf("Error\n");
