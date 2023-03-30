@@ -6,13 +6,10 @@
  */
 size_t list_len(const list_t *h)
 {
-	list_t *l = h;
-	size_t i = 0;
+	const list_t *l = h;
+	size_t i;
 
-	while (l != NULL)
-	{
-		i++;
+	for (i = 0; l != NULL; i++)
 		l = l->next;
-	}
 	return (i);
 }
