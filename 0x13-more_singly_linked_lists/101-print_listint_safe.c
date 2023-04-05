@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	fp = head;
 	while (fp != NULL && fp->next != NULL)
 	{
-		printf("[%p] %d", sp, sp->n);
+		printf("[%p] %d\n", (void *)sp, sp->n);
 		sp = sp->next;
 		fp = fp->next->next;
 		n++;
@@ -24,19 +24,19 @@ size_t print_listint_safe(const listint_t *head)
 			fp = head;
 			while (sp != fp)
 			{
-				printf("[%p] %d", sp, sp->n);
+				printf("[%p] %d\n", (void *)sp, sp->n);
 				sp = sp->next;
 				fp = fp->next;
 				n++;
 			}
-			printf("-> [%p] %d", sp, sp->n);
+			printf("-> [%p] %d\n", (void *)sp, sp->n);
 			return (n);
 		}
 		/* exit 98 ? */
 	}
 	while (sp != NULL)
 	{
-		printf("[%p] %d", sp, sp->n);
+		printf("[%p] %d\n", (void *)sp, sp->n);
 		sp = sp->next;
 		n++;
 	}
