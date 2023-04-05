@@ -8,12 +8,36 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node;
+	const listint_t *sp, *fp;
 	size_t n = 0;
 
-	for (node = head; node->next != NULL; node = node->next)
+	sp = head;
+	fp = head;
+	while (fp != NULL && fp->next != NULL)
 	{
-		printf("[%p] %d", node, node->n);
+		printf("[%p] %d", sp, sp->n);
+		sp = sp->next;
+		fp = fp->next->next;
+		n++;
+		if (sp == fp)
+		{
+			fp = head;
+			while (sp != fp)
+			{
+				printf("[%p] %d", sp, sp->n);
+				sp = sp->next;
+				fp = fp->next;
+				n++;
+			}
+			printf("-> [%p] %d", sp, sp->n);
+			return (n);
+		}
+		/* exit 98 ? */
+	}
+	while (sp != NULL)
+	{
+		printf("[%p] %d", sp, sp->n);
+		sp = sp->next;
 		n++;
 	}
 	return (n);
