@@ -13,14 +13,18 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t n;
+	ssize_t n = 0;
 	char str[1000];
 
-	fd = open(filename, O_RDONLY);
-	if (filename == NULL || fd < 0)
-		return (0);
-	n = read(fd, str, letters);
-	n = write(STDOUT_FILENO, str, (size_t)n);
-	close(fd);
+	if (filename != NULL)
+	{
+		fd = open(filename, O_RDONLY);
+		if (fd >= 0)
+		{
+			n = read(fd, str, letters);
+			n = write(STDOUT_FILENO, str, (size_t)n);
+			close(fd);
+		}
+	}
 	return (n);
 }

@@ -6,6 +6,7 @@
 #include <elf.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #if defined(__LP64__)
 #define ElfW(type) Elf64_ ## type
@@ -22,7 +23,7 @@
 int main(int ac, char **av)
 {
 	int elfd;
-	char buffer[];
+	char buffer[16];
 
 	ElfW(Ehdr) header;
 
@@ -31,19 +32,20 @@ int main(int ac, char **av)
 	elfd = open(av[1], O_RDONLY);
 	if (elfd > 0)
 	{
-		read(av[1], buffer, sizeof(header));
+		read(elfd, buffer, sizeof(header));
 		if (memcmp(header.e_ident, ELFMAG, SELFMAG) == 0)
 		{
 			printf("ELF Header:\n");
-			printf("  Magic: \n");
-			printf("  Class: \n");
-			printf("  Data: \n");
-			printf("  Version: \n");
-			printf("  OS/ABI: \n");
-			printf("  ABI Version: \n");
-			printf("  Type: \n");
-			printf("  Entry point address: \n");
+			printf("  %9s %s\n", "Magic:", "a");
+			printf("  %34s %s\n", "Class:", "a");
+			printf("  %34s %s\n", "Data:", "a");
+			printf("  %34s %s\n", "Version:", "a");
+			printf("  %34s %s\n", "OS/ABI:","a" );
+			printf("  %34s %s\n", "ABI Version:","a" );
+			printf("  %34s %s\n", "Type:","a" );
+			printf("  %34s %s\n", "Entry point address:", "a");
 		}
 		close(elfd);
 	}
+	return (0);
 }
