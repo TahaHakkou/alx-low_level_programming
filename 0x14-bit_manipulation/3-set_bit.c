@@ -7,11 +7,10 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int m = *n;
-	unsigned int i;
+	unsigned long int m = 1;
 
-	for (i = 0; i < index; i++)
-		m /= 2;
-	if (m % 2 == 0)
-		n += pow(2, index);
+	for (; index > 0; index--)
+		m *= 2;
+	*n = *n | m;
+	return (1); /* return */
 }
